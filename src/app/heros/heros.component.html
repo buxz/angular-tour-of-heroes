@@ -1,0 +1,17 @@
+<h2> My Heroes </h2>
+<ul class="heroes">
+  <!--
+    <li> 是*ngFor 的宿主元素
+    heroes 来自HeroesComponent
+  -->
+  <li *ngFor="let hero of heroes" (click)="onSelect(hero)" [class.selected]="hero === selectedHero">
+    <span class="badge">{{ hero.id}}</span> {{ hero.name }}
+  </li>
+</ul>
+<!-- HeroesComponent 可以控制子组件 HeroDetailComponent。 -->
+<app-hero-details [hero]="selectedHero"></app-hero-details>
+
+
+
+
+

@@ -1,0 +1,16 @@
+<!--
+  当应用启动时，selectedHero 是 undefined，设计如此。
+  {{selectedHero.name}} 此处出错
+  该组件应该在 selectedHero 有值的时候才显示
+  当 selectedHero 为 undefined 时，ngIf 从 DOM 中移除了英雄详情
+-->
+<div *ngIf="hero">
+  <!-- (|) 管道操作符，管道是格式化字符串/金额/日期或其他数据显示的方法-->
+  <h2>{{hero.name | uppercase}} Details</h2>
+  <div><span>Id:</span>{{hero.id}}</div>
+  <div>
+    <label>Name:</label>
+    <!-- [(ngModel)] 是Angular的双向数据绑定语法 -->
+    <input type="text" [(ngModel)] ="hero.name" placeholder="name">
+  </div>
+</div>
